@@ -3,6 +3,7 @@ import re
 import sys
 import requests
 from lab.cache import cached_call
+from lab.store import save_run
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 DEFAULT_MODEL = "llama3.1:8b"
@@ -61,7 +62,7 @@ def score_case(raw_text, expected):
     return hits / len(expected), True, predicted
 
 
-def run(task_dir, split="train", model=DEFAULT_MODEL, verbose=True):
+def run(task_dir, split="train", model=DEFAULT_MODEL, verbose=True, candidate_id=None):
     prompt_template, cases = load_task(task_dir, split)
     results = []
 
@@ -83,8 +84,10 @@ def run(task_dir, split="train", model=DEFAULT_MODEL, verbose=True):
             print(f"{case['id']}  {score:.2f}{flag}")
 
     mean = sum(r["score"] for r in results) / len(results) if results else 0.0
+    run_id = save_run(task_dir, model, prompt_template, split, mean,
+                      results, candidate_id=candidate_id)
     if verbose:
-        print(f"\n{split}: {len(results)} cases, mean {mean:.3f}")
+        print(f"\n{split}: {len(results)} cases, mean {mean:.3f}  (run {run_id})")
     return results, mean
 
 
