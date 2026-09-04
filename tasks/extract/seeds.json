@@ -1,0 +1,10 @@
+[
+  {"input": "Warehouse Associate at Pinecrest Foods. Onsite in Reno NV.",
+   "expected": {"company": "Pinecrest Foods", "title": "Warehouse Associate", "location": "Reno, NV", "remote": false}},
+
+  {"input": "Technical Writer wanted. Company not disclosed. 100% remote.",
+   "expected": {"company": null, "title": "Technical Writer", "location": null, "remote": true}},
+
+  {"input": "Orbit Metrics is hiring a Data Engineer III — remote, team based in Seattle Washington.",
+   "expected": {"company": "Orbit Metrics", "title": "Data Engineer III", "location": "Seattle, WA", "remote": true}}
+]
