@@ -9,6 +9,8 @@ SQLite so results are reproducible and comparable.
 
 ![results](results.png)
 
+*Right panel: whiskers show the worst-to-best range across variants of the same method. The human-written rule was applied on top of bootstrap's 0.667 prompt — it lowered the score.*
+
 ## Results
 
 Task: extract `{company, title, location, remote}` as JSON from messy
@@ -85,6 +87,8 @@ searches for a better prompt and records every candidate and score in
 SQLite so results are reproducible and comparable.
 
 ![results](results.png)
+
+*Right panel: whiskers show the worst-to-best range across variants of the same method. The human-written rule was applied on top of bootstrap's 0.667 prompt — it lowered the score.*
 
 ## Results
 
