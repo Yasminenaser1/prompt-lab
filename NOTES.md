@@ -41,3 +41,20 @@
 - c08 also returned company "Anonymous fintech startup" vs expected null
   — same describe-the-absence pattern as c05. Partly a ground-truth
   judgment call on my side.
+
+## mutate (Sep 4)
+- 4 variants from base: dev 0.083 / 0.333 / 0.417 / 0.583.
+  High variance — 7x spread from the same procedure at temp 0.8.
+  Worst variant scored BELOW base (0.083 vs 0.167).
+- Best mutate (0.583) still lost to bootstrap (0.667).
+- Both mutated from base, not from the bootstrap winner — chaining
+  untested (needs start_from / hillclimb).
+- Winning prompt (cand 22) fixed the schema by naming the four keys —
+  that's where the gain came from. Everything else was OVERFIT to the
+  3 train failures it was shown: literal string rules like
+  '"Block from" indicates location is nearby', '"5 days" indicates
+  non-remote', plus an invented "non-permanent employment" concept
+  not in the schema, and a wrong prior ("assume remote unless stated").
+- It never discovered the "City, ST" normalization rule I predicted.
+- Takeaway: textual-gradient mutation memorizes the failures it's shown.
+  Clean demos generalized better than derived rules on this task.
