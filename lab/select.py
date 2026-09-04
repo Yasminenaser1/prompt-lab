@@ -4,10 +4,12 @@ from lab.runner import DEFAULT_MODEL, load_task, run
 from lab.store import save_candidate, set_candidate_score, get_candidate
 from lab.optimizers.bootstrap import propose as bootstrap_propose
 from lab.optimizers.mutate import propose as mutate_propose
+from lab.optimizers.append import propose as append_propose
 from lab.store import save_candidate, set_candidate_score, get_candidate
 
-OPTIMIZERS = {"bootstrap": bootstrap_propose, "mutate": mutate_propose}
-NEEDS_RESULTS = {"mutate"}
+OPTIMIZERS = {"bootstrap": bootstrap_propose, "mutate": mutate_propose,
+              "append": append_propose}
+NEEDS_RESULTS = {"mutate", "append"}
 
 
 def _score_prompt(task_dir, prompt_text, split, model, candidate_id):

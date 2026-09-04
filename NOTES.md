@@ -77,3 +77,32 @@
   contribution was fixing schema drift — which bootstrap does better,
   deterministically, and without overfitting to train failures.
 - Location normalization ("City, ST") remains unsolved by both methods.
+
+## The 0.667 ceiling (Sep 4)
+- append: 4 rules generated, ALL about key naming, none about location —
+  despite train failures showing location wrong in 4/4 cases. The
+  meta-model pattern-matched to "extraction task -> say something about
+  schemas" instead of reading the actual errors. Best 0.667 (+0.000).
+- Hand-written rule ("Normalize location to City, ST...") scored 0.583 —
+  WORSE than no rule. Per-case diff vs cand 2: every location identical
+  (rule ignored entirely), and c07's title regressed from
+  "Sr. DevOps Engineer" to "SR. DEVOPS ENGINEER!!!".
+- Conclusion: ceiling is llama3.1:8b's instruction-following, not the
+  search method. Prose rules are ignored AND still perturb unrelated
+  fields (rule interference).
+- Next test: change the DEMOS, not the instructions — a seed showing
+  "Denver" -> "Denver, CO" demonstrates the transform instead of
+  describing it. Hypothesis: demonstration beats instruction on 8b.
+
+## Final results (Sep 4)
+- k=4 test: adding a "Portland" -> "Portland, OR" demo changed nothing
+  (0.667 both). Demonstration didn't beat instruction either — the
+  ceiling is the model, not the method.
+- HELD-OUT TEST (scored once, never tuned against):
+    base           test 0.250
+    bootstrap k=3  test 0.875
+- Caveat: test is only 2 cases; scores quantize to 1/8. Test > dev is
+  small-sample noise, not evidence the prompt is better than dev showed.
+- Story: prompt optimization captured the schema-compliance gain
+  immediately, then hit a hard capability ceiling that three optimizers,
+  a hand-written rule, and a targeted demo all failed to move.
