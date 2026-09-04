@@ -25,10 +25,11 @@ def make_key(model, prompt, temperature):
     return hashlib.sha256(blob.encode()).hexdigest()
 
 
-def cached_call(prompt, model, temperature=0.0, call_fn=None):
+def cached_call(prompt, model, temperature=0.0, call_fn=None,
+                force_json=True):
     """Return (response_text, was_cache_hit)."""
     init_cache()
-    key = make_key(model, prompt, temperature)
+    key = make_key(model, prompt, (temperature, force_json))
 
     with _connect() as conn:
         row = conn.execute(
@@ -39,7 +40,8 @@ def cached_call(prompt, model, temperature=0.0, call_fn=None):
 
     if call_fn is None:
         from lab.runner import call_model as call_fn
-    response = call_fn(prompt, model=model)
+    response = call_fn(prompt, model=model, force_json=force_json,
+                       temperature=temperature)
 
     with _connect() as conn:
         conn.execute(

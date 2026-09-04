@@ -53,7 +53,7 @@ def propose(task_dir, base_prompt, results=None, n=4,
     seen = set()
     for i in range(n):
         raw, _ = cached_call(meta + f"\n\n[variant {i}]", model=model,
-                             temperature=temperature)
+                             temperature=temperature, force_json=False)
         new_prompt = raw.strip().strip("`").strip()
         if "{input}" not in new_prompt or new_prompt in seen:
             continue

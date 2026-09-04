@@ -30,3 +30,14 @@
 ## Open
 - Haven't inspected which dev cases still fail after bootstrap.
 - mutate written, not yet run.
+
+## Post-bootstrap failures (candidate 2, dev 0.667)
+- Schema drift fully resolved — all keys and types correct.
+- Remaining errors are location normalization, not extraction:
+  c06 "Chicago" (no state), c07 "Dallas, Texas" (not abbreviated),
+  c08 "NYC" (not expanded). Expected format is "City, ST".
+- Seeds never demonstrated the "City, ST" rule (kept minimal on purpose),
+  so this is real headroom for mutate to discover.
+- c08 also returned company "Anonymous fintech startup" vs expected null
+  — same describe-the-absence pattern as c05. Partly a ground-truth
+  judgment call on my side.

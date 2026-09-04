@@ -19,15 +19,16 @@ def load_task(task_dir, split=None):
     return prompt_template, cases
 
 
-def call_model(prompt, model=DEFAULT_MODEL):
+def call_model(prompt, model=DEFAULT_MODEL, force_json=True,
+               temperature=0.0):
     r = requests.post(
         OLLAMA_URL,
         json={
             "model": model,
             "prompt": prompt,
             "stream": False,
-            "format": "json",
-            "options": {"temperature": 0},
+            **({"format": "json"} if force_json else {}),
+            "options": {"temperature": temperature},
         },
         timeout=120,
     )

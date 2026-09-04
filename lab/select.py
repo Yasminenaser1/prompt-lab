@@ -64,4 +64,6 @@ def optimize(task_dir, optimizer="bootstrap", split="dev",
 
 if __name__ == "__main__":
     task = sys.argv[1]
-    optimize(task, split=sys.argv[2] if len(sys.argv) > 2 else "dev")
+    split = sys.argv[2] if len(sys.argv) > 2 else "dev"
+    optimizer = sys.argv[3] if len(sys.argv) > 3 else "bootstrap"
+    optimize(task, optimizer=optimizer, split=split)
