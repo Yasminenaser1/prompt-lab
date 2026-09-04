@@ -1,0 +1,41 @@
+[
+  {"id": "c01", "split": "train",
+   "input": "Senior ML Engineer II — Redwood Labs. Hybrid, 3 days onsite in Austin TX. Posted 4 days ago.",
+   "expected": {"company": "Redwood Labs", "title": "Senior ML Engineer II", "location": "Austin, TX", "remote": false}},
+
+  {"id": "c02", "split": "train",
+   "input": "We're hiring! Data Analyst @ Northwind Grocery. Fully remote, US only.",
+   "expected": {"company": "Northwind Grocery", "title": "Data Analyst", "location": null, "remote": true}},
+
+  {"id": "c03", "split": "train",
+   "input": "Backend Engineer (Python) at Kestrel Systems. Our office is a block from Union Square. Onsite 5 days.",
+   "expected": {"company": "Kestrel Systems", "title": "Backend Engineer", "location": "San Francisco, CA", "remote": false}},
+
+  {"id": "c04", "split": "train",
+   "input": "Join Fathom AI as a Staff Software Engineer, Platform. Remote-first team, HQ in Denver.",
+   "expected": {"company": "Fathom AI", "title": "Staff Software Engineer, Platform", "location": "Denver, CO", "remote": true}},
+
+  {"id": "c05", "split": "train",
+   "input": "Product Designer — contract, 6 months. Company confidential. Work from anywhere.",
+   "expected": {"company": null, "title": "Product Designer", "location": null, "remote": true}},
+
+  {"id": "c06", "split": "dev",
+   "input": "Lumen Health is looking for a Machine Learning Engineer. Chicago based, hybrid schedule TBD.",
+   "expected": {"company": "Lumen Health", "title": "Machine Learning Engineer", "location": "Chicago, IL", "remote": false}},
+
+  {"id": "c07", "split": "dev",
+   "input": "SR. DEVOPS ENGINEER!!! Apply now — Grayline Logistics — Dallas, Texas — no remote work available",
+   "expected": {"company": "Grayline Logistics", "title": "Sr. DevOps Engineer", "location": "Dallas, TX", "remote": false}},
+
+  {"id": "c08", "split": "dev",
+   "input": "Anonymous fintech startup seeks Founding Engineer. NYC preferred but open to remote for the right person.",
+   "expected": {"company": null, "title": "Founding Engineer", "location": "New York, NY", "remote": true}},
+
+  {"id": "c09", "split": "test",
+   "input": "Quality Assurance Specialist II at Beacon Diagnostics, located at 400 Elm St, Boston MA 02108.",
+   "expected": {"company": "Beacon Diagnostics", "title": "Quality Assurance Specialist II", "location": "Boston, MA", "remote": false}},
+
+  {"id": "c10", "split": "test",
+   "input": "Cloudpeak — Solutions Architect — distributed team across 12 timezones, no offices",
+   "expected": {"company": "Cloudpeak", "title": "Solutions Architect", "location": null, "remote": true}}
+]

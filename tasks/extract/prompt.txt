@@ -1,0 +1,1 @@
+Extract the job info from this text as JSON: {input}
