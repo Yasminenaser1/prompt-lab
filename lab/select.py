@@ -3,8 +3,10 @@ import sys
 from lab.runner import DEFAULT_MODEL, load_task, run
 from lab.store import save_candidate, set_candidate_score
 from lab.optimizers.bootstrap import propose as bootstrap_propose
+from lab.optimizers.mutate import propose as mutate_propose
 
-OPTIMIZERS = {"bootstrap": bootstrap_propose}
+OPTIMIZERS = {"bootstrap": bootstrap_propose, "mutate": mutate_propose}
+NEEDS_RESULTS = {"mutate"}
 
 
 def _score_prompt(task_dir, prompt_text, split, model, candidate_id):
@@ -33,7 +35,13 @@ def optimize(task_dir, optimizer="bootstrap", split="dev",
     set_candidate_score(base_id, base_score)
     print(f"base            {split} {base_score:.3f}")
 
-    candidates = OPTIMIZERS[optimizer](task_dir, base_prompt)
+    if optimizer in NEEDS_RESULTS:
+        train_results, _ = run(task_dir, split='train', model=model,
+                               verbose=False, candidate_id=base_id)
+        candidates = OPTIMIZERS[optimizer](task_dir, base_prompt,
+                                           results=train_results)
+    else:
+        candidates = OPTIMIZERS[optimizer](task_dir, base_prompt)
     scored = []
 
     for cand in candidates:
@@ -42,7 +50,8 @@ def optimize(task_dir, optimizer="bootstrap", split="dev",
         score = _score_prompt(task_dir, cand["prompt"], split, model, cid)
         set_candidate_score(cid, score)
         scored.append((score, cid, cand))
-        label = f"{optimizer} k={cand['meta'].get('k')}"
+        tag = cand['meta'].get('k', cand['meta'].get('variant'))
+        label = f"{optimizer} {tag}"
         print(f"{label:<15} {split} {score:.3f}")
 
     scored.sort(key=lambda x: x[0], reverse=True)
