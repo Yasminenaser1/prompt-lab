@@ -58,3 +58,22 @@
 - It never discovered the "City, ST" normalization rule I predicted.
 - Takeaway: textual-gradient mutation memorizes the failures it's shown.
   Clean demos generalized better than derived rules on this task.
+- Worst variant (cand 17, dev 0.083): "Extract company and title from the
+  job posting, and the rest of the info as remote, location, and duration.
+  {input}" — reads fine to a human, scores below the one-line base.
+  Two causes: invented a 5th field ("duration", from the c05 contract
+  case) and dropped the word "JSON" entirely.
+- Core lesson: a prompt cannot be evaluated by reading it. Cand 17 reads
+  BETTER than base and scores half as well. This is the argument for the
+  harness.
+
+## Chaining bootstrap -> mutate (Sep 4)
+- start_from=2 (bootstrap winner, dev 0.667) as mutate's starting prompt.
+- Only 2 of 4 variants survived the {input} guard — mutating a long
+  few-shot prompt breaks more often than mutating a one-liner.
+- Results: 0.667 (tie) and 0.250 (-0.417). Net +0.000.
+- Conclusion: mutate could not improve on bootstrap's output and had a
+  coin-flip chance of destroying it. On this task, mutation's only real
+  contribution was fixing schema drift — which bootstrap does better,
+  deterministically, and without overfitting to train failures.
+- Location normalization ("City, ST") remains unsolved by both methods.

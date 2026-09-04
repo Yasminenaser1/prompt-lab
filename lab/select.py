@@ -1,9 +1,10 @@
 import sys
 
 from lab.runner import DEFAULT_MODEL, load_task, run
-from lab.store import save_candidate, set_candidate_score
+from lab.store import save_candidate, set_candidate_score, get_candidate
 from lab.optimizers.bootstrap import propose as bootstrap_propose
 from lab.optimizers.mutate import propose as mutate_propose
+from lab.store import save_candidate, set_candidate_score, get_candidate
 
 OPTIMIZERS = {"bootstrap": bootstrap_propose, "mutate": mutate_propose}
 NEEDS_RESULTS = {"mutate"}
@@ -28,8 +29,11 @@ def _score_prompt(task_dir, prompt_text, split, model, candidate_id):
 
 
 def optimize(task_dir, optimizer="bootstrap", split="dev",
-             model=DEFAULT_MODEL):
-    base_prompt, _ = load_task(task_dir)
+             model=DEFAULT_MODEL, start_from=None):
+    if start_from:
+        base_prompt = get_candidate(start_from)[1]
+    else:
+        base_prompt, _ = load_task(task_dir)
     base_id = save_candidate(task_dir, base_prompt, "base")
     base_score = _score_prompt(task_dir, base_prompt, split, model, base_id)
     set_candidate_score(base_id, base_score)

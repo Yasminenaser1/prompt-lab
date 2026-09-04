@@ -91,3 +91,13 @@ def history(task=None, limit=50):
             return conn.execute(q.format("WHERE task = ?"),
                                 (task, limit)).fetchall()
         return conn.execute(q.format(""), (limit,)).fetchall()
+
+
+
+def get_candidate(candidate_id):
+    init_db()
+    with _connect() as conn:
+        return conn.execute(
+            "SELECT id, prompt_text, dev_score FROM candidates WHERE id = ?",
+            (candidate_id,)
+        ).fetchone()
