@@ -1,0 +1,662 @@
+[
+ {
+  "id": "e000",
+  "split": "train",
+  "input": "i was able to help chai lifeline with your support and encouragement is a great feeling and i am so glad you were able to help me",
+  "expected": "joy"
+ },
+ {
+  "id": "e001",
+  "split": "train",
+  "input": "i also know how good it feels to look back and see that i honored my word and that helps from the start",
+  "expected": "joy"
+ },
+ {
+  "id": "e002",
+  "split": "train",
+  "input": "i am ever feeling nostalgic about the fireplace i will know that it is still on the property",
+  "expected": "love"
+ },
+ {
+  "id": "e003",
+  "split": "train",
+  "input": "i can feel my ovaries aching talking to me as i like to put it",
+  "expected": "sadness"
+ },
+ {
+  "id": "e004",
+  "split": "train",
+  "input": "i bag qaf look who s cryin now jacynthe lookin good feelin gorgeous rupaul the skins scissor sisters valentine the sun fed up kayle who s your daddy gerling awake the unkind u",
+  "expected": "joy"
+ },
+ {
+  "id": "e005",
+  "split": "train",
+  "input": "i was feeling so discouraged we are already robbing peter to pay paul to get our cow this year but we cant afford to not get the cow this way",
+  "expected": "sadness"
+ },
+ {
+  "id": "e006",
+  "split": "train",
+  "input": "i already feel like i fucked up though because i dont usually eat at all in the morning",
+  "expected": "anger"
+ },
+ {
+  "id": "e007",
+  "split": "train",
+  "input": "i feel excited about what im doing again i feel like i have a ton of catching up to do",
+  "expected": "joy"
+ },
+ {
+  "id": "e008",
+  "split": "train",
+  "input": "i feel like i need to make a list leanne would be appalled at the thought so that i dont miss anything",
+  "expected": "anger"
+ },
+ {
+  "id": "e009",
+  "split": "train",
+  "input": "i feel more superior dead chicken or grieving child",
+  "expected": "joy"
+ },
+ {
+  "id": "e010",
+  "split": "train",
+  "input": "i talk to dogs as i feel they cannot understand words but they can read emotions and know how to be supportive i decided i should go home",
+  "expected": "love"
+ },
+ {
+  "id": "e011",
+  "split": "train",
+  "input": "i was feeling brave when i bought it and clearly when i was doing my makeup",
+  "expected": "joy"
+ },
+ {
+  "id": "e012",
+  "split": "train",
+  "input": "im feeling bitter today my mood has been strange the entire day so i guess its that",
+  "expected": "anger"
+ },
+ {
+  "id": "e013",
+  "split": "train",
+  "input": "i feel like throwing away the shitty piece of shit paper",
+  "expected": "sadness"
+ },
+ {
+  "id": "e014",
+  "split": "train",
+  "input": "im starting to feel wryly amused at the banal comedy of errors my life is turning into",
+  "expected": "joy"
+ },
+ {
+  "id": "e015",
+  "split": "train",
+  "input": "i didnt really feel that embarrassed",
+  "expected": "sadness"
+ },
+ {
+  "id": "e016",
+  "split": "train",
+  "input": "i get giddy over feeling elegant in a perfectly fitted pencil skirt",
+  "expected": "joy"
+ },
+ {
+  "id": "e017",
+  "split": "train",
+  "input": "i need to feel the dough to make sure its just perfect",
+  "expected": "joy"
+ },
+ {
+  "id": "e018",
+  "split": "train",
+  "input": "i have been with petronas for years i feel that petronas has performed well and made a huge profit",
+  "expected": "joy"
+ },
+ {
+  "id": "e019",
+  "split": "train",
+  "input": "i have been on a roller coaster of emotions over these supposed feelings that something unpleasant was coming",
+  "expected": "sadness"
+ },
+ {
+  "id": "e020",
+  "split": "train",
+  "input": "i have the feeling she was amused and delighted",
+  "expected": "joy"
+ },
+ {
+  "id": "e021",
+  "split": "train",
+  "input": "i already have my christmas trees up i got two and am feeling festive which i m sure is spurring me to get started on this book",
+  "expected": "joy"
+ },
+ {
+  "id": "e022",
+  "split": "train",
+  "input": "i will be able to lay on my bed in the dark and not feel terrified at least for a while",
+  "expected": "fear"
+ },
+ {
+  "id": "e023",
+  "split": "train",
+  "input": "i did alright in class but a combination of feeling unsuccessful being man handled the stress of late and my horrible week resulted in my almost crying after i finished grappling",
+  "expected": "sadness"
+ },
+ {
+  "id": "e024",
+  "split": "train",
+  "input": "i do however want you to know that if something someone is causing you to feel less then your splendid self step away from them",
+  "expected": "joy"
+ },
+ {
+  "id": "e025",
+  "split": "train",
+  "input": "i feel very strongly passionate about when some jerk off decides to poke and make fun of us",
+  "expected": "joy"
+ },
+ {
+  "id": "e026",
+  "split": "train",
+  "input": "i feel like i have to make the suffering i m seeing mean something",
+  "expected": "sadness"
+ },
+ {
+  "id": "e027",
+  "split": "train",
+  "input": "i hope that you realize how such little effort is required to make a person feel better about themselves or their situation whether its me a family member a college or high school friend a neighbor down the street or even a complete stranger",
+  "expected": "joy"
+ },
+ {
+  "id": "e028",
+  "split": "train",
+  "input": "i still love my so and wish the best for him i can no longer tolerate the effect that bm has on our lives and the fact that is has turned my so into a bitter angry person who is not always particularly kind to the people around him when he is feeling stressed",
+  "expected": "sadness"
+ },
+ {
+  "id": "e029",
+  "split": "train",
+  "input": "im tired of the book and ready to have it out of here and finding out that i was given unsuitable images and then feeling blamed for the result did not sit well",
+  "expected": "sadness"
+ },
+ {
+  "id": "e030",
+  "split": "train",
+  "input": "im grabbing a minute to post i feel greedy wrong",
+  "expected": "anger"
+ },
+ {
+  "id": "e031",
+  "split": "train",
+  "input": "i can t let go of that sad feeling that i want to be accepted here in this first home of mine",
+  "expected": "love"
+ },
+ {
+  "id": "e032",
+  "split": "train",
+  "input": "i say goodbye to the fam theyre all sad a crying and i feel like a heartless bitch because hey im pretty excited to be flying for the first time and you know also to spend a year in another country",
+  "expected": "anger"
+ },
+ {
+  "id": "e033",
+  "split": "train",
+  "input": "i feel low energy i m just thirsty",
+  "expected": "sadness"
+ },
+ {
+  "id": "e034",
+  "split": "train",
+  "input": "on a boat trip to denmark",
+  "expected": "joy"
+ },
+ {
+  "id": "e035",
+  "split": "train",
+  "input": "i feel like a miserable piece of garbage",
+  "expected": "sadness"
+ },
+ {
+  "id": "e036",
+  "split": "train",
+  "input": "i feel very happy and excited since i learned so many things",
+  "expected": "joy"
+ },
+ {
+  "id": "e037",
+  "split": "train",
+  "input": "i think about how u could make me feel and realize that everything will be ok",
+  "expected": "joy"
+ },
+ {
+  "id": "e038",
+  "split": "train",
+  "input": "i feel that at shows and around show horses people are trusting and relaxed because most show horses are safe and quiet and are handled frequently",
+  "expected": "joy"
+ },
+ {
+  "id": "e039",
+  "split": "train",
+  "input": "i am not sure what would make me feel content if anything",
+  "expected": "joy"
+ },
+ {
+  "id": "e040",
+  "split": "train",
+  "input": "i now feel compromised and skeptical of the value of every unit of work i put in",
+  "expected": "fear"
+ },
+ {
+  "id": "e041",
+  "split": "train",
+  "input": "ive been taking or milligrams or times recommended amount and ive fallen asleep a lot faster but i also feel like so funny",
+  "expected": "surprise"
+ },
+ {
+  "id": "e042",
+  "split": "train",
+  "input": "i remember feeling acutely distressed for a few days",
+  "expected": "fear"
+ },
+ {
+  "id": "e043",
+  "split": "train",
+  "input": "i feel so worthless during those times i was struggling finding work",
+  "expected": "sadness"
+ },
+ {
+  "id": "e044",
+  "split": "train",
+  "input": "i keep feeling pleasantly surprised at his supportiveness and also his ease in new situations",
+  "expected": "surprise"
+ },
+ {
+  "id": "e045",
+  "split": "train",
+  "input": "i have this feeling that if i have anymore vigorous sexual activity in the coming yes i misspelt that as cumming days parts of me will begin to fall off",
+  "expected": "joy"
+ },
+ {
+  "id": "e046",
+  "split": "train",
+  "input": "i feel like things are getting a little overwhelming a few spritz of this toner really helps calm and soothe me",
+  "expected": "joy"
+ },
+ {
+  "id": "e047",
+  "split": "train",
+  "input": "i feel kinda appalled that she feels like she needs to explain in wide and lenghth her body measures etc pp",
+  "expected": "anger"
+ },
+ {
+  "id": "e048",
+  "split": "train",
+  "input": "i can t imagine a real life scenario where i would be emotionally connected enough with someone to feel totally accepted and safe where it it morally acceptable for me to have close and prolonged physical contact and where sex won t be expected subsequently",
+  "expected": "joy"
+ },
+ {
+  "id": "e049",
+  "split": "train",
+  "input": "i drove dannika to school i was feeling a little bit rushed and this is what greeted me as i turned the corner",
+  "expected": "anger"
+ },
+ {
+  "id": "e050",
+  "split": "train",
+  "input": "i feel my mom s graceful warm loving smile as i rob the time to nurture myself and heal",
+  "expected": "joy"
+ },
+ {
+  "id": "e051",
+  "split": "train",
+  "input": "i have immense sympathy with the general point but as a possible proto writer trying to find time to write in the corners of life and with no sign of an agent let alone a publishing contract this feels a little precious",
+  "expected": "joy"
+ },
+ {
+  "id": "e052",
+  "split": "train",
+  "input": "when my mums brother passed away after having been involved in a car accident he was bringing me a present as i had passed my form five exams with flying colours",
+  "expected": "sadness"
+ },
+ {
+  "id": "e053",
+  "split": "train",
+  "input": "i feel completely honored to be an influence to this young talented fully alive beautiful girl woman",
+  "expected": "joy"
+ },
+ {
+  "id": "e054",
+  "split": "train",
+  "input": "i am feeling grouchy",
+  "expected": "anger"
+ },
+ {
+  "id": "e055",
+  "split": "train",
+  "input": "i don t necessarily think f bombs and sex are necessary in all stories but i feel reassured when i see them in print journals",
+  "expected": "joy"
+ },
+ {
+  "id": "e056",
+  "split": "train",
+  "input": "i only have a couple of things left to make and at the start of december i am done and feeling smug",
+  "expected": "joy"
+ },
+ {
+  "id": "e057",
+  "split": "train",
+  "input": "i feel irritated and rejected without anyone doing anything or saying anything",
+  "expected": "anger"
+ },
+ {
+  "id": "e058",
+  "split": "train",
+  "input": "i lost my special mind but don t worry i m still sane i just wanted you to feel what i felt while reading this book i don t know how many times it was said that sam was special but i can guarantee you it was many more times than what i used in that paragraph did i tell you she was special",
+  "expected": "joy"
+ },
+ {
+  "id": "e059",
+  "split": "train",
+  "input": "i do not feel reassured anxiety is on each side",
+  "expected": "joy"
+ },
+ {
+  "id": "e060",
+  "split": "dev",
+  "input": "i am feeling completely overwhelmed i have two strategies that help me to feel grounded pour my heart out in my journal in the form of a letter to god and then end with a list of five things i am most grateful for",
+  "expected": "fear"
+ },
+ {
+  "id": "e061",
+  "split": "dev",
+  "input": "i did successfully manage to stretch a mxm canvas i feel that this is an achievement in itself for me and was a worthwhile usage of my money and time i will use the canvas for future briefs",
+  "expected": "joy"
+ },
+ {
+  "id": "e062",
+  "split": "dev",
+  "input": "i feel selfish and spoiled",
+  "expected": "anger"
+ },
+ {
+  "id": "e063",
+  "split": "dev",
+  "input": "i began having them several times a week feeling tortured by the hallucinations moving people and figures sounds and vibrations",
+  "expected": "fear"
+ },
+ {
+  "id": "e064",
+  "split": "dev",
+  "input": "i didnt feel humiliated",
+  "expected": "sadness"
+ },
+ {
+  "id": "e065",
+  "split": "dev",
+  "input": "i alba i feel good and im fitting in",
+  "expected": "joy"
+ },
+ {
+  "id": "e066",
+  "split": "dev",
+  "input": "i do feel that running is a divine experience and that i can expect to have some type of spiritual encounter",
+  "expected": "joy"
+ },
+ {
+  "id": "e067",
+  "split": "dev",
+  "input": "i can go from feeling so hopeless to so damned hopeful just from being around someone who cares and is awake",
+  "expected": "sadness"
+ },
+ {
+  "id": "e068",
+  "split": "dev",
+  "input": "i feel as confused about life as a teenager or as jaded as a year old man",
+  "expected": "fear"
+ },
+ {
+  "id": "e069",
+  "split": "dev",
+  "input": "i mean really really hard works to obtain such a high technical skill in wushu feel kinda ashamed but somehow motivated when i saw kids doing wushu performances whole heartedly despite their tiredness",
+  "expected": "sadness"
+ },
+ {
+  "id": "e070",
+  "split": "dev",
+  "input": "i know the pain parents feel when an enraged child becomes violent",
+  "expected": "anger"
+ },
+ {
+  "id": "e071",
+  "split": "dev",
+  "input": "i hate living under my dads roof because it gives him an excuse to be an asshole to me because hes providing for me to live here i think he feels that he needs to make me feel as unwelcome as possible so ill leave",
+  "expected": "sadness"
+ },
+ {
+  "id": "e072",
+  "split": "dev",
+  "input": "i hear are owners who feel victimized by their associations the associations attorneys or the property manager",
+  "expected": "sadness"
+ },
+ {
+  "id": "e073",
+  "split": "dev",
+  "input": "i am feeling miserable but c i am also the proudest mum on earth",
+  "expected": "sadness"
+ },
+ {
+  "id": "e074",
+  "split": "dev",
+  "input": "i feel so inhibited in someone elses kitchen like im painting on someone elses picture",
+  "expected": "sadness"
+ },
+ {
+  "id": "e075",
+  "split": "dev",
+  "input": "i plan to share my everyday life stories traveling adventures inspirations and handmade creations with you and hope you will also feel inspired",
+  "expected": "joy"
+ },
+ {
+  "id": "e076",
+  "split": "dev",
+  "input": "i feel you know basically like a fake in the realm of science fiction",
+  "expected": "sadness"
+ },
+ {
+  "id": "e077",
+  "split": "dev",
+  "input": "i am feeling so festive today that i m even going to put the tree up as soon as i ve finished doing this and catching up with the week s goings ons on coronation street",
+  "expected": "joy"
+ },
+ {
+  "id": "e078",
+  "split": "dev",
+  "input": "i remember feeling so hellip furious with the shooter",
+  "expected": "anger"
+ },
+ {
+  "id": "e079",
+  "split": "dev",
+  "input": "i figure my family loves us no matter what but around anyone else i feel embarrassed when michelle goes ballistic",
+  "expected": "sadness"
+ },
+ {
+  "id": "e080",
+  "split": "dev",
+  "input": "i feel in they talk the brother in law is extremely popular the one that had no me to think is so stiff",
+  "expected": "joy"
+ },
+ {
+  "id": "e081",
+  "split": "dev",
+  "input": "ive worn it once on its own with a little concealer and for the days im feeling brave but dont want to be pale then its perfect",
+  "expected": "joy"
+ },
+ {
+  "id": "e082",
+  "split": "dev",
+  "input": "i feel romantic too",
+  "expected": "love"
+ },
+ {
+  "id": "e083",
+  "split": "dev",
+  "input": "i was ready to meet mom in the airport and feel her ever supportive arms around me",
+  "expected": "love"
+ },
+ {
+  "id": "e084",
+  "split": "dev",
+  "input": "i need you i need someone i need to be protected and feel safe i am small now i find myself in a season of no words",
+  "expected": "joy"
+ },
+ {
+  "id": "e085",
+  "split": "dev",
+  "input": "i started feeling sentimental about dolls i had as a child and so began a collection of vintage barbie dolls from the sixties",
+  "expected": "sadness"
+ },
+ {
+  "id": "e086",
+  "split": "dev",
+  "input": "i think feelings are one of nay the most important things we have",
+  "expected": "joy"
+ },
+ {
+  "id": "e087",
+  "split": "dev",
+  "input": "i suppose my own truth needs to be shared i havent been feeling very faithful lately ive dwelled more in doubt and uncertainty than i have in faith",
+  "expected": "love"
+ },
+ {
+  "id": "e088",
+  "split": "dev",
+  "input": "i have seen heard and read over the past couple of days i am left feeling impressed by more than a few companies",
+  "expected": "surprise"
+ },
+ {
+  "id": "e089",
+  "split": "dev",
+  "input": "i feel angered and firey",
+  "expected": "anger"
+ },
+ {
+  "id": "e090",
+  "split": "test",
+  "input": "i think it s the easiest time of year to feel dissatisfied",
+  "expected": "anger"
+ },
+ {
+  "id": "e091",
+  "split": "test",
+  "input": "i am letting go of the animosity that is towards anyone that i feel has wronged me",
+  "expected": "anger"
+ },
+ {
+  "id": "e092",
+  "split": "test",
+  "input": "i have been feeling the need to be creative",
+  "expected": "joy"
+ },
+ {
+  "id": "e093",
+  "split": "test",
+  "input": "i feel pretty pathetic most of the time",
+  "expected": "sadness"
+ },
+ {
+  "id": "e094",
+  "split": "test",
+  "input": "i am now nearly finished the week detox and i feel amazing",
+  "expected": "surprise"
+ },
+ {
+  "id": "e095",
+  "split": "test",
+  "input": "i become overwhelmed and feel defeated",
+  "expected": "sadness"
+ },
+ {
+  "id": "e096",
+  "split": "test",
+  "input": "i didn t feel like doing much chris and i mostly just took too many pictures of unimportant stuff",
+  "expected": "sadness"
+ },
+ {
+  "id": "e097",
+  "split": "test",
+  "input": "i was feeling listless from the need of new things something different",
+  "expected": "sadness"
+ },
+ {
+  "id": "e098",
+  "split": "test",
+  "input": "i ate i could feel a gentle tingle throughout almost as if i was feeling the healing taking place at a cellular level",
+  "expected": "love"
+ },
+ {
+  "id": "e099",
+  "split": "test",
+  "input": "i feel a bit rude writing to an elderly gentleman to ask for gifts because i feel a bit greedy but what is christmas about if not mild greed",
+  "expected": "anger"
+ },
+ {
+  "id": "e100",
+  "split": "test",
+  "input": "i wont let me child cry it out because i feel that loving her and lily when she was little was going to be opportunities that only lasted for those short few months",
+  "expected": "love"
+ },
+ {
+  "id": "e101",
+  "split": "test",
+  "input": "i found myself feeling a little discouraged that morning",
+  "expected": "sadness"
+ },
+ {
+  "id": "e102",
+  "split": "test",
+  "input": "i feel like we are pressured into being young beautiful thin and depending on the trend having the girls rejuvenated or butt implants",
+  "expected": "fear"
+ },
+ {
+  "id": "e103",
+  "split": "test",
+  "input": "i feel selfish as i read back to my former posts how i have never asked for prayers for others how i never considered that there may be others out there that deserve their prayers answered before my own",
+  "expected": "anger"
+ },
+ {
+  "id": "e104",
+  "split": "test",
+  "input": "i climbed the hill feeling frustrated that id pretty much paced entirely wrong for this course and that a factor that has never ever hampered me had made such a dent in the day",
+  "expected": "anger"
+ },
+ {
+  "id": "e105",
+  "split": "test",
+  "input": "ive been feeling a little burdened lately wasnt sure why that was",
+  "expected": "sadness"
+ },
+ {
+  "id": "e106",
+  "split": "test",
+  "input": "i was stymied a little bit as i wrote feeling unsure that i might go somewhere with the story unintended",
+  "expected": "fear"
+ },
+ {
+  "id": "e107",
+  "split": "test",
+  "input": "i find every body beautiful and only want people to feel vital in their bodies",
+  "expected": "joy"
+ },
+ {
+  "id": "e108",
+  "split": "test",
+  "input": "i stopped feeling cold and began feeling hot",
+  "expected": "anger"
+ },
+ {
+  "id": "e109",
+  "split": "test",
+  "input": "finding out that i am not ill not seriously",
+  "expected": "joy"
+ }
+]

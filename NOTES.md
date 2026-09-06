@@ -106,3 +106,29 @@
 - Story: prompt optimization captured the schema-compliance gain
   immediately, then hit a hard capability ceiling that three optimizers,
   a hand-written rule, and a targeted demo all failed to move.
+
+## Task 2: emotion classification (dair-ai/emotion, 200 cases)
+- 100 train / 60 dev / 40 test, shuffled with seed 0. Imbalanced:
+  joy 36% of train, surprise 5%. Majority-class floor is 0.36.
+- Base prompt ("What emotion is in this text? {input}") scored train
+  0.140 -- BELOW the majority-class floor. 6:53 uncached.
+- Failure mode: open-vocabulary answers in prose. Model returned
+  "EXUBERANCE", "amusement", "delight", "relief", "gratitude" -- all
+  defensible readings, none in the six-label set. Comprehension is fine;
+  it was never told the options exist.
+- Scorer caveat: first-known-label-wins means e005 ("sadness or grief")
+  scored 1.0 partly by word order. Documented in scorers.py.
+
+## Emotion + bootstrap (3B) — unexpected result
+- Switched to llama3.2:3b after 8b caused thermal timeouts at 60-case
+  dev. Splits reduced to 60/30/20.
+- 3B base scored train 0.133 vs 8B's 0.140 on the same task — the
+  open-vocabulary failure is NOT a model-size problem.
+- bootstrap on emotion: base 0.133, k=1 0.067, k=2 0.133, k=3 0.100.
+  Best +0.000. Demos did nothing here, opposite of the extraction task.
+- Every dev case was a parse fail (predicted=None) — the model still
+  produced no label word despite two worked examples in the prompt.
+- Prompt itself verified well-formed, so this is not a template bug.
+- OPEN: check whether raw responses are empty (3B + trailing "Output:")
+  vs genuinely off-vocabulary. That distinction decides whether this is
+  a real finding or a mechanical artifact.

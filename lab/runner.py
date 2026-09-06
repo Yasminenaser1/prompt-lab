@@ -2,11 +2,21 @@ import json
 import re
 import sys
 import requests
+
+from lab.scorers import SCORERS
 from lab.cache import cached_call
 from lab.store import save_run
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-DEFAULT_MODEL = "llama3.1:8b"
+DEFAULT_MODEL = "llama3.2:3b"
+
+
+def load_config(task_dir):
+    try:
+        with open(f"{task_dir}/config.json") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"scorer": "fields", "force_json": True}
 
 
 def load_task(task_dir, split=None):
@@ -65,19 +75,22 @@ def score_case(raw_text, expected):
 
 def run(task_dir, split="train", model=DEFAULT_MODEL, verbose=True, candidate_id=None):
     prompt_template, cases = load_task(task_dir, split)
+    config = load_config(task_dir)
+    scorer = SCORERS[config.get('scorer', 'fields')]
+    force_json = config.get('force_json', True)
     results = []
 
     for case in cases:
         prompt = prompt_template.replace("{input}", case["input"])
         try:
-             raw, hit = cached_call(prompt, model=model)
+             raw, hit = cached_call(prompt, model=model, force_json=force_json)
         except requests.RequestException as e:
             print(f"{case['id']}  REQUEST FAILED: {e}")
             results.append({"case_id": case["id"], "score": 0.0,
                             "parse_ok": False, "raw": None, "predicted": None})
             continue
 
-        score, parse_ok, predicted = score_case(raw, case["expected"])
+        score, parse_ok, predicted = scorer(raw, case["expected"], config)
         results.append({"case_id": case["id"], "score": score,
                         "parse_ok": parse_ok, "raw": raw, "predicted": predicted})
         if verbose:

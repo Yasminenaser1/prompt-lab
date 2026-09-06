@@ -1,0 +1,1 @@
+What emotion is in this text? {input}

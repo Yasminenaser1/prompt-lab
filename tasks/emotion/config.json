@@ -1,0 +1,2 @@
+{"scorer": "label", "force_json": false,
+ "labels": ["sadness", "joy", "love", "anger", "fear", "surprise"]}

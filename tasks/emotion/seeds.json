@@ -1,0 +1,10 @@
+[
+  {"input": "i finally heard back and i cant stop smiling about it",
+   "expected": "joy"},
+  {"input": "i keep replaying the argument and i just feel hollow",
+   "expected": "sadness"},
+  {"input": "i cannot believe they went through my things without asking",
+   "expected": "anger"},
+  {"input": "i didnt expect to see her name on the list at all",
+   "expected": "surprise"}
+]
