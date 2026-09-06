@@ -132,3 +132,20 @@
 - OPEN: check whether raw responses are empty (3B + trailing "Output:")
   vs genuinely off-vocabulary. That distinction decides whether this is
   a real finding or a mechanical artifact.
+
+## Emotion: demos vs. instructions (3B, 30-case dev) — REVERSED from task 1
+- Investigated the all-parse-fail result. Two failure modes in raw output:
+  off-vocabulary answers ("gratitude", "guilt") AND prompt echoing
+  (model continued the few-shot pattern, emitting "Input: ..." instead
+  of answering). Echo is a 3B + trailing "Output:" artifact.
+- Removed the trailing "Output:": dev 0.133, unchanged. Echo was not
+  the cause.
+- Hand-written prompt STATING the six labels explicitly: dev 0.333.
+  2.5x over base (0.133), while every few-shot variant scored 0.133.
+- FINDING: on classification, telling the model the label set works and
+  showing examples does not. This is the reverse of the extraction task,
+  where demos beat every instruction (human and optimizer written).
+  Interpretation: demos convey FORMAT well but cannot convey that a
+  vocabulary is CLOSED and has exactly six members. One sentence can.
+- Caveat: 0.333 is still below the 0.36 majority-class floor. The
+  vocabulary problem is fixed; the classification itself is still poor.
