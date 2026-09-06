@@ -1,2 +1,13 @@
-{"scorer": "label", "force_json": false,
- "labels": ["sadness", "joy", "love", "anger", "fear", "surprise"]}
+{
+ "scorer": "label",
+ "force_json": false,
+ "labels": [
+  "sadness",
+  "joy",
+  "love",
+  "anger",
+  "fear",
+  "surprise"
+ ],
+ "insert_before": "Text: {input}"
+}

@@ -149,3 +149,24 @@
   vocabulary is CLOSED and has exactly six members. One sentence can.
 - Caveat: 0.333 is still below the 0.36 majority-class floor. The
   vocabulary problem is fixed; the classification itself is still poor.
+
+## Instruction PLACEMENT beats instruction content (emotion, 3B)
+- append's _insert_rule split on "\n\nExamples:" and fell through to
+  end-append for prompts without a demo block. On the emotion prompt
+  that put the rule AFTER the answer cue ("Emotion:"), breaking the
+  prompt structurally. All 4 variants scored below base (0.100-0.267).
+- Fixed: tasks now declare config["insert_before"] so the rule lands at
+  the end of the instruction block. Same optimizer, same generation
+  process, re-run: 0.167-0.367. Best (0.367) beat base (0.333) and
+  cleared the 0.36 majority-class floor for the first time.
+- FINDING: placement mattered more than content. Identical rule-writing
+  produced a 0.267 ceiling in the wrong position and 0.367 in the right
+  one.
+- CAVEAT: the winning rule is semantically empty -- "for emotional words
+  like 'joy', 'love'... return the corresponding sentiment value if a
+  related text is detected". It restates the task. +0.033 on 30 cases is
+  one case flipping, so this is inside noise. Cannot distinguish between
+  (a) noise, (b) rule presence mattering more than content, (c) real gain.
+- Across both tasks, append's generated rules never tracked the actual
+  errors: key-naming rules for location failures on extraction, a
+  circular restatement here.

@@ -1,7 +1,7 @@
 import json
 
 from lab.cache import cached_call
-from lab.runner import DEFAULT_MODEL, load_task
+from lab.runner import DEFAULT_MODEL, load_config as _config, load_task
 
 META_PROMPT = """A prompt is producing these errors. "expected" is correct, \
 "got" is what the model returned:
@@ -26,12 +26,21 @@ def _format_failures(results, cases, limit=4):
     )
 
 
-def _insert_rule(base_prompt, rule):
-    """Append the rule to the instruction block, before any examples."""
-    marker = "\n\nExamples:"
-    if marker in base_prompt:
+def _insert_rule(base_prompt, rule, config=None):
+    """Insert the rule at the end of the instruction block.
+
+    Tasks declare where their instructions end via config["insert_before"];
+    appending blindly to the end can land the rule AFTER the answer cue
+    (e.g. after "Emotion:"), which breaks the prompt regardless of the
+    rule's content.
+    """
+    marker = (config or {}).get("insert_before")
+    if marker and marker in base_prompt:
         head, tail = base_prompt.split(marker, 1)
-        return f"{head}\n{rule}{marker}{tail}"
+        return f"{head.rstrip()}\n{rule}\n\n{marker}{tail}"
+    if "\n\nExamples:" in base_prompt:
+        head, tail = base_prompt.split("\n\nExamples:", 1)
+        return f"{head}\n{rule}\n\nExamples:{tail}"
     return f"{base_prompt.rstrip()}\n{rule}"
 
 
@@ -53,7 +62,7 @@ def propose(task_dir, base_prompt, results=None, n=4,
             continue
         seen.add(rule)
         candidates.append({
-            "prompt": _insert_rule(base_prompt, rule),
+            "prompt": _insert_rule(base_prompt, rule, _config(task_dir)),
             "meta": {"optimizer": "append", "variant": i, "rule": rule},
         })
     return candidates
