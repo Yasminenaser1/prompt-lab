@@ -42,8 +42,14 @@ def optimize(task_dir, optimizer="bootstrap", split="dev",
     print(f"base            {split} {base_score:.3f}")
 
     if optimizer in NEEDS_RESULTS:
-        train_results, _ = run(task_dir, split='train', model=model,
-                               verbose=False, candidate_id=base_id)
+        import lab.runner as _r
+        _orig = _r.load_task
+        _r.load_task = lambda td, sp=None: (base_prompt, _orig(td, sp)[1])
+        try:
+            train_results, _ = run(task_dir, split='train', model=model,
+                                   verbose=False, candidate_id=base_id)
+        finally:
+            _r.load_task = _orig
         candidates = OPTIMIZERS[optimizer](task_dir, base_prompt,
                                            results=train_results)
     else:

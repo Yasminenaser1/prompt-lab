@@ -170,3 +170,23 @@
 - Across both tasks, append's generated rules never tracked the actual
   errors: key-naming rules for location failures on extraction, a
   circular restatement here.
+
+## Emotion: mutate + held-out test
+- Fixed a real bug in select.py: with start_from set, the train run that
+  collects failures still read prompt.txt from disk, so the optimizer was
+  shown the WRONG prompt's failures. Before fix mutate produced 0 valid
+  candidates (IndexError). After fix: 3 of 4 valid, best 0.433 (+0.100).
+- Winning mutate prompt is the hand-written one with things REMOVED:
+  dropped "Answer with one word only", reworded the opener, changed
+  "Text:" to "input:". Shorter beat longer.
+- HELD-OUT TEST (20 cases, scored once):
+    base                0.000
+    human label list    0.200
+    mutate winner       0.450
+  Ranking matches dev (0.133 / 0.333 / 0.433), so dev selection
+  generalized rather than overfit.
+- Base scored exactly 0.000 -- never produced any of the six labels once.
+- THESIS ACROSS BOTH TASKS: added prose instructions rarely help and
+  often hurt (hand-written location rule -0.083; append's best rule
+  semantically empty; mutate won by deleting an instruction). What moves
+  the score is structural: the label set, rule placement, demo format.
